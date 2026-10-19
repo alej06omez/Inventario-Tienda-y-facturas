@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.tienda.inventario.controller.LoginController" spacing="8" styleClass="formulario, login">
+    <Label text="Sistema de Gestión de Inventario" styleClass="titulo-seccion"/>
+    <Label text="Usuario"/>
+    <TextField fx:id="username" onAction="#ingresar"/>
+    <Label text="Contraseña"/>
+    <PasswordField fx:id="password" onAction="#ingresar"/>
+    <Label fx:id="mensaje" styleClass="mensaje-error" wrapText="true"/>
+    <Button text="Ingresar" defaultButton="true" styleClass="primario" onAction="#ingresar" maxWidth="Infinity"/>
+    <HBox spacing="8">
+        <Button text="Registrarse" onAction="#registrarse"/>
+        <Button text="Olvidé mi contraseña" onAction="#recuperar"/>
+    </HBox>
+</VBox>

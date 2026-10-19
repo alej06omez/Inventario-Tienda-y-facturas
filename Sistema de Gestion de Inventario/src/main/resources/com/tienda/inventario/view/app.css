@@ -1,0 +1,103 @@
+/* Hoja unica de la app. WindowManager la aplica a cada Scene y a cada Alert. */
+
+/* Tamano de letra (Configuracion): una clase en la raiz; todo lo demas usa em y hereda. */
+.root.letra-pequena { -fx-font-size: 12px; }
+.root.letra-mediana { -fx-font-size: 14px; }
+.root.letra-grande  { -fx-font-size: 18px; }
+
+.root {
+    -fx-accent: #1f5fa8;
+    -fx-focus-color: #1f5fa8;
+    -fx-background-color: #f6f7f9;
+}
+
+/* Formularios */
+.formulario {
+    -fx-hgap: 0.7em;
+    -fx-vgap: 0.6em;
+    -fx-padding: 1.1em;
+}
+.formulario .label { -fx-text-fill: #222; }
+.titulo-seccion {
+    -fx-font-weight: bold;
+    -fx-font-size: 1.1em;
+    -fx-text-fill: #1a1a1a;
+    -fx-padding: 0.4em 0 0.1em 0;
+}
+.nota { -fx-text-fill: #555; -fx-font-size: 0.9em; }
+.mensaje-error {
+    -fx-text-fill: #9b1c1c;
+    -fx-font-weight: bold;
+}
+.text-field, .combo-box { -fx-pref-width: 16em; }
+.campo-corto { -fx-pref-width: 6em; }
+/* Login en em (antes 360 px): a 18 px "Registrarse" y "Olvidé mi contraseña" se cortaban. */
+.login { -fx-pref-width: 27em; }
+/* Pregunta de recuperacion: cabe la mas larga a 18 px; el formulario entero se ensancha con ella. */
+.combo-box.combo-largo { -fx-pref-width: 25em; }
+/* Prompt de ComboBox (WindowManager.promptGris): gris #595959 sobre el fondo del combo (#e0e0e0 en el peor punto) ~5,3:1. */
+.combo-box .list-cell.prompt { -fx-text-fill: #595959; -fx-font-style: italic; }
+/* Formulario dentro de otro (Mi cuenta en Configuracion): sin doble sangria. */
+.formulario .formulario { -fx-padding: 0; }
+/* Pestana con scroll (Configuracion): mismo fondo que el resto, sin marco. */
+.scroll-pane.pagina, .scroll-pane.pagina > .viewport { -fx-background-color: transparent; }
+.tabla-umbral { -fx-pref-height: 12em; }
+
+/* Botones */
+.button { -fx-padding: 0.35em 0.9em; }
+.button.primario {
+    -fx-background-color: #1f5fa8;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4;
+}
+.button.primario:hover { -fx-background-color: #184c87; }
+.button.primario:focused { -fx-background-color: #184c87, #1f5fa8; -fx-background-insets: 0, 2; }
+.button.peligro {
+    -fx-background-color: #a12626;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4;
+}
+.button.peligro:hover { -fx-background-color: #861d1d; }
+/* Deshabilitado: gris legible (modena solo baja la opacidad a 0.4 y el rojo queda rosa palido). Texto/fondo ~5.6:1. */
+.button:disabled, .button.primario:disabled, .button.peligro:disabled {
+    -fx-opacity: 1;
+    -fx-background-color: #c9ced6, #e4e6ea;
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 4, 3;
+    -fx-text-fill: #545a62;
+}
+
+/* Tablas */
+.table-view .column-header .label { -fx-font-weight: bold; }
+.table-row-cell { -fx-cell-size: 2em; }
+/* Columnas numericas (Cantidad, Umbral, Precio, Subtotal): la clase del TableColumn llega a su cabecera y a sus celdas. */
+.table-cell.numero { -fx-alignment: CENTER-RIGHT; -fx-padding: 0 0.8em 0 0; }
+.column-header.numero > .label { -fx-alignment: CENTER-RIGHT; -fx-padding: 0 0.8em 0 0; }
+.total { -fx-font-weight: bold; -fx-font-size: 1.15em; }
+
+/* Pestanas */
+.tab-pane > .tab-header-area { -fx-padding: 0.4em 0.5em 0 0.5em; }
+.tab .tab-label { -fx-padding: 0.15em 0.6em; }
+
+/* Dashboard: el nivel va en texto (VENCIDO/CRITICO...) ademas del color. Contraste texto/fondo >= 7:1. */
+.dashboard { -fx-background-color: #eceff3; -fx-border-color: #c9ced6; -fx-border-width: 1 0 0 0; }
+.alerta-celda:rojo {
+    -fx-background-color: #fbe3e4;
+    -fx-text-fill: #6b0f14;
+    -fx-border-color: transparent transparent transparent #b42318;
+    -fx-border-width: 0 0 0 6;
+}
+.alerta-celda:amarillo {
+    -fx-background-color: #fff4cc;
+    -fx-text-fill: #4d3800;
+    -fx-border-color: transparent transparent transparent #d9a400;
+    -fx-border-width: 0 0 0 6;
+}
+.dashboard .list-view > .virtual-flow > .clipped-container > .sheet > .alerta-celda:rojo:selected {
+    -fx-background-color: #6b0f14, #fbe3e4; -fx-background-insets: 0, 2; -fx-text-fill: #6b0f14;
+}
+.dashboard .list-view > .virtual-flow > .clipped-container > .sheet > .alerta-celda:amarillo:selected {
+    -fx-background-color: #4d3800, #fff4cc; -fx-background-insets: 0, 2; -fx-text-fill: #4d3800;
+}

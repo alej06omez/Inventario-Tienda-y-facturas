@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.tienda.inventario.controller.CajeroController" styleClass="formulario">
+    <columnConstraints><ColumnConstraints minWidth="-Infinity"/><ColumnConstraints hgrow="ALWAYS"/></columnConstraints>
+    <Label text="Nombre *" GridPane.rowIndex="0"/>   <TextField fx:id="nombre" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <Label text="Apellido *" GridPane.rowIndex="1"/> <TextField fx:id="apellido" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Label text="* Campo obligatorio" styleClass="nota" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    <Label fx:id="mensaje" styleClass="mensaje-error" wrapText="true" maxWidth="320" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    <Button text="Guardar" defaultButton="true" styleClass="primario" onAction="#guardar" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+</GridPane>

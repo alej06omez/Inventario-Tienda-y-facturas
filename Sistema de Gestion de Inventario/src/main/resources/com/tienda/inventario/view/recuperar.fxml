@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.tienda.inventario.controller.RecuperarController" styleClass="formulario">
+    <columnConstraints><ColumnConstraints minWidth="-Infinity"/><ColumnConstraints hgrow="ALWAYS"/></columnConstraints>
+    <Label text="Usuario *" GridPane.rowIndex="0"/>
+    <HBox spacing="8" GridPane.rowIndex="0" GridPane.columnIndex="1">
+        <TextField fx:id="username" onAction="#verPregunta"/>
+        <Button text="Ver pregunta" onAction="#verPregunta"/>
+    </HBox>
+    <Label text="Pregunta" GridPane.rowIndex="1"/>
+    <Label fx:id="pregunta" text="(pulse Ver pregunta)" styleClass="nota" wrapText="true" maxWidth="320" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Label text="Respuesta *" GridPane.rowIndex="2"/>        <PasswordField fx:id="respuesta" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    <Label text="Nueva contraseña *" GridPane.rowIndex="3"/> <PasswordField fx:id="nueva" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    <Label text="* Campo obligatorio" styleClass="nota" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    <Label fx:id="mensaje" styleClass="mensaje-error" wrapText="true" maxWidth="320" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    <Button text="Cambiar contraseña" defaultButton="true" styleClass="primario" onAction="#cambiar" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+</GridPane>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.tienda.inventario.controller.DistribuidorController" styleClass="formulario">
+    <columnConstraints><ColumnConstraints minWidth="-Infinity"/><ColumnConstraints hgrow="ALWAYS"/></columnConstraints>
+    <Label text="Distribuidora" styleClass="titulo-seccion" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+    <Label text="Nombre *" GridPane.rowIndex="1"/>    <TextField fx:id="nombre" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Label text="Teléfono" GridPane.rowIndex="2"/>    <TextField fx:id="telefono" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    <Label text="Email" GridPane.rowIndex="3"/>       <TextField fx:id="email" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    <Label text="Distribuidor (opcional)" styleClass="titulo-seccion" GridPane.rowIndex="4" GridPane.columnSpan="2"/>
+    <Label text="Para vincular un distribuidor ya registrado basta la cédula. Para uno nuevo: cédula y nombre." styleClass="nota" wrapText="true" GridPane.rowIndex="5" GridPane.columnSpan="2"/>
+    <Label text="Cédula" GridPane.rowIndex="6"/>      <TextField fx:id="cedula" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+    <Label text="Nombre" GridPane.rowIndex="7"/>      <TextField fx:id="drNombre" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+    <Label text="Apellidos" GridPane.rowIndex="8"/>   <TextField fx:id="drApellidos" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+    <Label text="Email" GridPane.rowIndex="9"/>       <TextField fx:id="drEmail" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+    <Label text="Teléfono" GridPane.rowIndex="10"/>   <TextField fx:id="drTelefono" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+    <Label text="* Campo obligatorio" styleClass="nota" GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+    <Label fx:id="mensaje" styleClass="mensaje-error" wrapText="true" maxWidth="360" GridPane.rowIndex="12" GridPane.columnIndex="1"/>
+    <Button text="Guardar distribuidora" styleClass="primario" onAction="#guardar" GridPane.rowIndex="13" GridPane.columnIndex="1"/>
+</GridPane>

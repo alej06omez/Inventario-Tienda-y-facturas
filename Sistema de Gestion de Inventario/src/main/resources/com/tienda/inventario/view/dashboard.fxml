@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.tienda.inventario.controller.DashboardController" spacing="12" prefHeight="210" styleClass="dashboard">
+    <padding><Insets top="8" right="12" bottom="12" left="12"/></padding>
+    <VBox spacing="4" HBox.hgrow="ALWAYS">
+        <Label fx:id="tituloExpirar" text="Próximos a expirar" styleClass="titulo-seccion"/>
+        <ListView fx:id="expirar" VBox.vgrow="ALWAYS">
+            <placeholder><Label text="Ningún producto vence en los próximos 7 días"/></placeholder>
+        </ListView>
+    </VBox>
+    <VBox spacing="4" HBox.hgrow="ALWAYS">
+        <Label fx:id="tituloStock" text="Stock bajo" styleClass="titulo-seccion"/>
+        <ListView fx:id="stock" VBox.vgrow="ALWAYS">
+            <placeholder><Label text="Ningún producto con stock bajo"/></placeholder>
+        </ListView>
+    </VBox>
+</HBox>

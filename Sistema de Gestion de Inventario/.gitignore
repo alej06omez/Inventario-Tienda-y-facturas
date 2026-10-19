@@ -1,0 +1,9 @@
+target/
+src/main/resources/db.properties
+README.md
+
+docs/BITACORA.md
+docs/TAREAS.md
+src/test
+
+*.txt

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.tienda.inventario.controller.ProductoController" styleClass="formulario">
+    <columnConstraints><ColumnConstraints minWidth="-Infinity"/><ColumnConstraints/><ColumnConstraints/></columnConstraints>
+    <Label text="Nombre *" GridPane.rowIndex="0"/>               <TextField fx:id="nombre" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <Label text="Cantidad *" GridPane.rowIndex="1"/>             <TextField fx:id="cantidad" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Label text="Precio *" GridPane.rowIndex="2"/>               <TextField fx:id="precio" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    <Label text="Fecha de expiración *" GridPane.rowIndex="3"/>  <DatePicker fx:id="expiracion" editable="false" promptText="Elija una fecha" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    <Label text="Distribuidora *" GridPane.rowIndex="4"/>        <ComboBox fx:id="distribuidora" promptText="Seleccione..." GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    <Label text="Categoría *" GridPane.rowIndex="5"/>            <ComboBox fx:id="categoria" promptText="Seleccione..." GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    <Button text="Nueva categoría..." onAction="#nuevaCategoria" GridPane.rowIndex="5" GridPane.columnIndex="2"/>
+    <Label text="* Campo obligatorio" styleClass="nota" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+    <Label fx:id="mensaje" styleClass="mensaje-error" wrapText="true" maxWidth="360" GridPane.rowIndex="7" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+    <Button text="Guardar producto" styleClass="primario" onAction="#guardar" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+</GridPane>

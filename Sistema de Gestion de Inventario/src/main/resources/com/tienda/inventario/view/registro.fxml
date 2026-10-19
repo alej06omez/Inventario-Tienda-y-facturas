@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.tienda.inventario.controller.RegistroController" styleClass="formulario">
+    <columnConstraints><ColumnConstraints minWidth="-Infinity"/><ColumnConstraints hgrow="ALWAYS"/></columnConstraints>
+    <Label text="Nombre *" GridPane.rowIndex="0"/>                   <TextField fx:id="nombre" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <Label text="Usuario *" GridPane.rowIndex="1"/>                  <TextField fx:id="username" promptText="3 a 50 letras, números, _ o ." GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+    <Label text="Contraseña *" GridPane.rowIndex="2"/>               <PasswordField fx:id="password" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+    <Label text="Teléfono *" GridPane.rowIndex="3"/>                 <TextField fx:id="telefono" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    <Label text="Pregunta de recuperación *" GridPane.rowIndex="4"/> <ComboBox fx:id="pregunta" styleClass="combo-largo" promptText="Seleccione una pregunta..." maxWidth="Infinity" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    <Label text="Respuesta *" GridPane.rowIndex="5"/>                <PasswordField fx:id="respuesta" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    <Label fx:id="rolLabel" text="Rol *" GridPane.rowIndex="6"/>     <ComboBox fx:id="rol" maxWidth="Infinity" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+    <Label text="* Campo obligatorio" styleClass="nota" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+    <Label fx:id="mensaje" styleClass="mensaje-error" wrapText="true" maxWidth="320" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+    <Button text="Registrar" defaultButton="true" styleClass="primario" onAction="#guardar" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+</GridPane>

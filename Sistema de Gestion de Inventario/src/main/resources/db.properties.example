@@ -1,0 +1,5 @@
+# Copiar a ~/.inventario/db.properties (recomendado) o pasar -Ddb.config=RUTA. Ver README.md.
+# Usuario MySQL dedicado (no root). No poner ?user= ni password en la URL.
+db.url=jdbc:mysql://localhost:3306/inventario_tienda?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=America/Bogota&connectTimeout=5000&socketTimeout=15000
+db.user=TU_USUARIO
+db.password=TU_PASSWORD

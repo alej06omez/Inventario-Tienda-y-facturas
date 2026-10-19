@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- ScrollPane: con "Mi cuenta" la pestana no cabe a 18 px; fitToWidth para que las notas hagan wrap al ancho. -->
+<ScrollPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.tienda.inventario.controller.ConfiguracionController" fitToWidth="true" styleClass="pagina">
+<VBox spacing="8" styleClass="formulario">
+    <fx:define><ToggleGroup fx:id="tamano"/></fx:define>
+    <Label text="Tamaño de letra" styleClass="titulo-seccion"/>
+    <HBox spacing="16">
+        <RadioButton fx:id="pequena" text="Pequeña" toggleGroup="$tamano" onAction="#letraPequena"/>
+        <RadioButton fx:id="mediana" text="Mediana" toggleGroup="$tamano" onAction="#letraMediana"/>
+        <RadioButton fx:id="grande" text="Grande" toggleGroup="$tamano" onAction="#letraGrande"/>
+    </HBox>
+    <Label text="Umbral de stock bajo por categoría" styleClass="titulo-seccion"/>
+    <Label fx:id="notaUmbral" text="Seleccione una categoría, escriba el umbral y guarde. El dashboard marca como BAJO los productos con menos unidades que el umbral." styleClass="nota" wrapText="true"/>
+    <TableView fx:id="tabla" styleClass="tabla-umbral">
+        <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY_FLEX_LAST_COLUMN"/></columnResizePolicy>
+        <placeholder><Label text="No hay categorías registradas"/></placeholder>
+        <columns>
+            <TableColumn fx:id="colNombre" text="Categoría" prefWidth="200"/>
+            <TableColumn fx:id="colTipo" text="Tipo" prefWidth="160"/>
+            <TableColumn fx:id="colUmbral" text="Umbral" prefWidth="90" styleClass="numero"/>
+        </columns>
+    </TableView>
+    <HBox fx:id="edicionUmbral" spacing="8" alignment="CENTER_LEFT">
+        <Label text="Umbral *"/>
+        <TextField fx:id="umbral" styleClass="campo-corto" onAction="#guardarUmbral"/>
+        <Button text="Guardar umbral" styleClass="primario" onAction="#guardarUmbral"/>
+        <Label fx:id="mensaje" styleClass="mensaje-error" wrapText="true"/>
+    </HBox>
+    <VBox fx:id="seccionUsuarios" spacing="8">
+        <Label text="Usuarios" styleClass="titulo-seccion"/>
+        <Button text="Registrar usuario..." onAction="#registrarUsuario"/>
+    </VBox>
+    <Label text="Mi cuenta" styleClass="titulo-seccion"/>
+    <GridPane styleClass="formulario">
+        <columnConstraints><ColumnConstraints minWidth="-Infinity"/><ColumnConstraints/></columnConstraints>
+        <Label text="Contraseña actual *" GridPane.rowIndex="0"/>          <PasswordField fx:id="claveActual" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Label text="Contraseña nueva *" GridPane.rowIndex="1"/>           <PasswordField fx:id="claveNueva" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Label text="Pregunta de recuperación *" GridPane.rowIndex="2"/>   <ComboBox fx:id="preguntaCuenta" promptText="Seleccione una pregunta..." styleClass="combo-largo" maxWidth="Infinity" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <Label text="Respuesta de recuperación *" GridPane.rowIndex="3"/>  <PasswordField fx:id="respuestaCuenta" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <Label text="* Campo obligatorio. Se cambian los cuatro a la vez." styleClass="nota" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        <!-- id (no fx:id) "mensaje": WindowManager.error elige el mas cercano al foco, asi el error de Mi cuenta no cae en la fila del umbral. -->
+        <Label id="mensaje" styleClass="mensaje-error" wrapText="true" maxWidth="360" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        <Button text="Guardar mi cuenta" styleClass="primario" onAction="#guardarCuenta" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+    </GridPane>
+</VBox>
+</ScrollPane>

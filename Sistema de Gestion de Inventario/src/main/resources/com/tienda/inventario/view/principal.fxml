@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.tienda.inventario.controller.PrincipalController" prefWidth="960" prefHeight="720">
+    <center>
+        <TabPane fx:id="tabs" tabClosingPolicy="UNAVAILABLE">
+            <Tab fx:id="tabVenta" text="Venta"><content><fx:include source="venta.fxml" fx:id="venta"/></content></Tab>
+            <Tab fx:id="tabProducto" text="Producto"><content><fx:include source="producto.fxml" fx:id="producto"/></content></Tab>
+            <Tab fx:id="tabDistribuidor" text="Distribuidor"><content><fx:include source="distribuidor.fxml" fx:id="distribuidor"/></content></Tab>
+            <Tab fx:id="tabInventario" text="Inventario"><content><fx:include source="inventario.fxml" fx:id="inventario"/></content></Tab>
+            <Tab fx:id="tabConfiguracion" text="Configuración"><content><fx:include source="configuracion.fxml" fx:id="configuracion"/></content></Tab>
+            <Tab fx:id="tabCerrar" text="Cerrar sesión"/>
+        </TabPane>
+    </center>
+    <bottom>
+        <fx:include source="dashboard.fxml" fx:id="dashboard"/>
+    </bottom>
+</BorderPane>

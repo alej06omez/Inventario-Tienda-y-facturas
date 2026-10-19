@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.tienda.inventario.controller.InventarioController" spacing="8" styleClass="formulario">
+    <Label text="Seleccione un producto de la tabla para editarlo o eliminarlo." styleClass="nota"/>
+    <TableView fx:id="tabla" VBox.vgrow="ALWAYS">
+        <columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY_FLEX_LAST_COLUMN"/></columnResizePolicy>
+        <placeholder><Label text="No hay productos registrados"/></placeholder>
+        <columns>
+            <TableColumn fx:id="colId" text="Id" prefWidth="60"/>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="240"/>
+            <TableColumn fx:id="colCantidad" text="Cantidad" prefWidth="90" styleClass="numero"/>
+            <TableColumn fx:id="colPrecio" text="Precio" prefWidth="110"/>
+            <TableColumn fx:id="colExpiracion" text="Expiración" prefWidth="120"/>
+        </columns>
+    </TableView>
+    <GridPane hgap="10" vgap="8">
+        <columnConstraints><ColumnConstraints minWidth="-Infinity"/><ColumnConstraints/><ColumnConstraints minWidth="-Infinity"/><ColumnConstraints/></columnConstraints>
+        <Label text="Nombre *" GridPane.rowIndex="0"/>        <TextField fx:id="nombre" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <Label text="Cantidad *" GridPane.rowIndex="0" GridPane.columnIndex="2"/> <TextField fx:id="cantidad" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+        <Label text="Precio *" GridPane.rowIndex="1"/>        <TextField fx:id="precio" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <Label text="Expiración *" GridPane.rowIndex="1" GridPane.columnIndex="2"/> <DatePicker fx:id="expiracion" editable="false" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+        <Label text="Distribuidora *" GridPane.rowIndex="2"/> <ComboBox fx:id="distribuidora" promptText="Seleccione..." GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <Label text="Categoría *" GridPane.rowIndex="2" GridPane.columnIndex="2"/> <ComboBox fx:id="categoria" promptText="Seleccione..." GridPane.rowIndex="2" GridPane.columnIndex="3"/>
+    </GridPane>
+    <Label fx:id="mensaje" styleClass="mensaje-error" wrapText="true"/>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <Button text="Nuevo" onAction="#nuevo"/>
+        <Button text="Registrar" styleClass="primario" onAction="#registrar"/>
+        <Separator orientation="VERTICAL"/>
+        <Button fx:id="actualizar" text="Actualizar" onAction="#actualizar"/>
+        <Button fx:id="eliminar" text="Eliminar" styleClass="peligro" onAction="#eliminar"/>
+    </HBox>
+</VBox>
